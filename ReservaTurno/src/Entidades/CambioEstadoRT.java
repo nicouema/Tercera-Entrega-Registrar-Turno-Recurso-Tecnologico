@@ -55,9 +55,9 @@ public class CambioEstadoRT {
     
     //Metodo 7
     //Verificar si el estado es activo
-//    public boolean esActivo(){
-//        return estado.esActivo();
-//    }
+    public boolean esActivo(){
+        return estado.esActivo();
+    }
     
     //Metodo 23
     public String obtenerEstado(){

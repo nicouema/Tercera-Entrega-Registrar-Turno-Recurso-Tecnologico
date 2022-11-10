@@ -1,10 +1,7 @@
 package BaseDatos;
 
 import Entidades.*;
-import Entidades.state.CanceladoMantenimientoCorrectivo;
-import Entidades.state.Disponible;
-import Entidades.state.Estado;
-import Entidades.state.Mantenimiento;
+import Entidades.state.*;
 
 import java.time.*;
 import java.util.ArrayList;
@@ -73,13 +70,13 @@ public class Datos {
         Estado e1 = new Disponible("Disponible","Recurso");
         Estado e2 = new Mantenimiento("En mantenimiento","Recurso");
         Estado e3 = new CanceladoMantenimientoCorrectivo("Con inicio de mantenimiento correctivo","Recurso");
-        Estado e4 = new Estado("Baja tecnica","Recurso");
-        Estado e5 = new Estado("Baja definitiva","Recurso");
+        Estado e4 = new BajaTecnica("Baja tecnica","Recurso");
+        Estado e5 = new BajaDefinitiva("Baja definitiva","Recurso");
 
         //Estados de Turno
-        Estado e6 = new Estado("Disponible","Turno");
-        Estado e7 = new Estado("Con reserva pendiente de confirmacion","Turno");
-        Estado e8 = new Estado("Reservado","Turno");
+        Estado e6 = new Disponible("Disponible","Turno");
+        Estado e7 = new ReservaPendienteConfirmacion("Con reserva pendiente de confirmacion","Turno");
+        Estado e8 = new Reservado("Reservado","Turno");
 
         estados.add(e1);
         estados.add(e2);
