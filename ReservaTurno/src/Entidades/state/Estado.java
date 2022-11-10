@@ -68,7 +68,7 @@ public abstract class Estado {
     //Empieza CU en Estado
     //Metodo 8
     //Verificar si el estado es activo, NO BAJA TECNICA, NI BAJA DEFINITIVA
-        public boolean esActivo(){
+    public boolean esActivo(){
         if (this.nombre.equals("Baja tecnica") || this.nombre.equals("Baja definitiva"))
             return false;
         return true;
@@ -97,6 +97,6 @@ public abstract class Estado {
 
 //    METODO POLIMORFICO
     public void reservarTurno(Turno turno, ArrayList<CambioEstadoTurno> cambios, LocalDateTime fechaHoraActual){
-
+        throw new RuntimeException("Metodo no soportado");
     }
 }
