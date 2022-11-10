@@ -109,7 +109,7 @@ public class Turno {
         this.estadoActual.reservarTurno(this, cambiosDeEstadosTurno, fechaHoraActual);
     }
 
-    public void setEstado(Reservado estadoActual) {
+    public void setEstado(Estado estadoActual) {
         this.estadoActual = estadoActual;
     }
 }
