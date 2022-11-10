@@ -1,4 +1,7 @@
 package Entidades;
+import Entidades.state.Disponible;
+import Entidades.state.Estado;
+
 import java.time.*;
 import java.util.ArrayList;
 
@@ -13,6 +16,7 @@ public class RecursoTecnologico{
     private int periodicidadMantenimientoPrev;
     private int duracionMantenimientoPrev;
     private int fraccionHorarioTurnos;
+    private Estado estadoActual;
     
     public RecursoTecnologico() {
     }
@@ -27,6 +31,7 @@ public class RecursoTecnologico{
         this.periodicidadMantenimientoPrev = periodicidadMantenimientoPrev;
         this.duracionMantenimientoPrev = duracionMantenimientoPrev;
         this.fraccionHorarioTurnos = fraccionHorarioTurnos;
+        this.estadoActual = new Disponible("Disponible", "Recurso Tecnologico");
         
     }
 

@@ -99,4 +99,12 @@ public abstract class Estado {
     public void reservarTurno(Turno turno, ArrayList<CambioEstadoTurno> cambios, LocalDateTime fechaHoraActual){
         throw new RuntimeException("Metodo no soportado");
     }
+
+    public Estado crearEstado(){
+        throw new RuntimeException("Metodo no soportado");
+    }
+
+    public CambioEstadoTurno crearCambioEstadoTurno(Estado estado, LocalDateTime fechaHoraActual) {
+        throw new RuntimeException("Metodo no soportado");
+    }
 }
