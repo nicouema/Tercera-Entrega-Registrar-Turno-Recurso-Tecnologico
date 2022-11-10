@@ -19,6 +19,11 @@ public class CambioEstadoTurno {
         this.fechaHoraHasta = fechaHoraHasta;
     }
 
+    public CambioEstadoTurno(Estado estado, LocalDateTime fechaHoraDesde) {
+        this.estado = estado;
+        this.fechaHoraDesde = fechaHoraDesde;
+    }
+
     public Estado getEstado() {
         return estado;
     }

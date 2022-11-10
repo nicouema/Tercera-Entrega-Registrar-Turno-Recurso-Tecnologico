@@ -266,12 +266,12 @@ public class GestorReservaTurno{
     }
 
     // TODO
-//    public void tomarConfirmacionReserva(boolean checkMail, boolean checkWsp, String datosReserva){
+    public void tomarConfirmacionReserva(boolean checkMail, boolean checkWsp, String datosReserva){
 //        Estado estadoReservado = obtenerReservado();
-//        registrarReserva(turnoSeleccionado,estadoReservado);
-//        generarNotificaciones(checkMail,checkWsp, datosReserva);
-//        finCasoDeUso();
-//    }
+        registrarReserva();
+        generarNotificaciones(checkMail,checkWsp, datosReserva);
+        finCasoDeUso();
+    }
     
 //    public Estado obtenerReservado(){
 //        for(Estado estado: datos.estados()){
@@ -281,9 +281,9 @@ public class GestorReservaTurno{
 //        return null;
 //    }
     
-    public void registrarReserva(Turno turnoSeleccionado,Estado estadoReservado){
+    public void registrarReserva(){
         LocalDateTime fechaHoraActual = obtenerFechaHoraActual();
-        turnoSeleccionado.reservarTurno(estadoReservado, fechaHoraActual);
+        turnoSeleccionado.reservarTurno(fechaHoraActual);
     }
     
     public void generarNotificaciones(boolean checkMail, boolean checkWsp, String datosReserva){

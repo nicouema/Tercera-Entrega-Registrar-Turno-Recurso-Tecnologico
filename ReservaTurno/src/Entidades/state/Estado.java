@@ -1,5 +1,11 @@
 package Entidades.state;
 
+import Entidades.CambioEstadoTurno;
+import Entidades.Turno;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+
 public abstract class Estado {
     //Atributos
     private String nombre;
@@ -62,11 +68,11 @@ public abstract class Estado {
     //Empieza CU en Estado
     //Metodo 8
     //Verificar si el estado es activo, NO BAJA TECNICA, NI BAJA DEFINITIVA
-//        public boolean esActivo(){
-//        if (this.nombre.equals("Baja tecnica") || this.nombre.equals("Baja definitiva"))
-//            return false;
-//        return true;
-//    }
+        public boolean esActivo(){
+        if (this.nombre.equals("Baja tecnica") || this.nombre.equals("Baja definitiva"))
+            return false;
+        return true;
+    }
 //
     //Metodo 24
     public String getNombre() {
@@ -88,4 +94,9 @@ public abstract class Estado {
 //            return true;
 //        return false;
 //    }
+
+//    METODO POLIMORFICO
+    public void reservarTurno(Turno turno, ArrayList<CambioEstadoTurno> cambios, LocalDateTime fechaHoraActual){
+
+    }
 }

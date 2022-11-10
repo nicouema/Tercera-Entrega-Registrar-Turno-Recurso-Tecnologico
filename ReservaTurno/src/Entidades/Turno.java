@@ -1,5 +1,7 @@
 package Entidades;
+import Entidades.state.Disponible;
 import Entidades.state.Estado;
+import Entidades.state.Reservado;
 
 import java.time.*;
 import java.util.ArrayList;
@@ -12,6 +14,8 @@ public class Turno {
     private LocalDateTime fechaHoraInicio;
     private LocalDateTime fechaHoraFin;
 
+    private Estado estadoActual;
+
     public Turno() {
     }
 
@@ -21,6 +25,7 @@ public class Turno {
         this.diaSemana = diaSemana;
         this.fechaHoraInicio = fechaHoraInicio;
         this.fechaHoraFin = fechaHoraFin;
+        this.estadoActual = new Disponible("Disponible", "Turno");
     }
 
     public ArrayList<CambioEstadoTurno> getCambiosDeEstadosTurno() {
@@ -90,13 +95,21 @@ public class Turno {
             return true;
         return false;
     }
+    public void agregarCambio(CambioEstadoTurno cambioEstadoTurno){
+        cambiosDeEstadosTurno.add(cambioEstadoTurno);
+    }
     
-    public void reservarTurno(Estado estadoReservado, LocalDateTime fechaHoraActual){
-        for(CambioEstadoTurno cambio: cambiosDeEstadosTurno){
-            if(cambio.esActual())
-                cambio.setFechaHoraHasta(fechaHoraActual);
-        }
-        CambioEstadoTurno cet = new CambioEstadoTurno(estadoReservado,fechaHoraActual,null);
-        cambiosDeEstadosTurno.add(cet);
+    public void reservarTurno(LocalDateTime fechaHoraActual){
+//        for(CambioEstadoTurno cambio: cambiosDeEstadosTurno){
+//            if(cambio.esActual())
+//                cambio.setFechaHoraHasta(fechaHoraActual);
+//        }
+//        CambioEstadoTurno cet = new CambioEstadoTurno(estadoReservado,fechaHoraActual,null);
+//        cambiosDeEstadosTurno.add(cet);
+        this.estadoActual.reservarTurno(this, cambiosDeEstadosTurno, fechaHoraActual);
+    }
+
+    public void setEstado(Reservado estadoActual) {
+        this.estadoActual = estadoActual;
     }
 }
