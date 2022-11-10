@@ -18,9 +18,9 @@ public class Disponible extends Estado{
 
     @Override
     public void reservarTurno(Turno turno, ArrayList<CambioEstadoTurno> cambios, LocalDateTime fechaHoraActual) {
-        for (CambioEstadoTurno cambio:cambios) {
-            if (cambio.esActual()) cambio.setFechaHoraHasta(fechaHoraActual);
-        }
+
+        for (CambioEstadoTurno cambio:cambios)if (cambio.esActual()) cambio.setFechaHoraHasta(fechaHoraActual);
+
         Reservado estadoActual = new Reservado("Reservado", "Turno");
         CambioEstadoTurno cambioActual = new CambioEstadoTurno(estadoActual, fechaHoraActual);
         turno.agregarCambio(cambioActual);
