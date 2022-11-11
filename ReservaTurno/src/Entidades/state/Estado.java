@@ -65,7 +65,7 @@ public abstract class Estado {
     }
 
 
-    //registrarInicioUsoReserva()
+    // METODOS CON IMPLEMENTACIONES TRIVIALES()
     public void  reservarConConfirmacionPendiente(){
         throw new RuntimeException("Metodo no soportado");
     }
