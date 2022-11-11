@@ -78,13 +78,7 @@ public abstract class Estado {
     public String getNombre() {
         return nombre;
     }
-
-    public String cancelar(){
-        throw new RuntimeException("Metodo no soportado");
-    }
-    public void reservar(){
-        throw new RuntimeException("Metodo no soportado");
-    }
+    
     public void  reservarConConfirmacionPendiente(){
         throw new RuntimeException("Metodo no soportado");
     }
