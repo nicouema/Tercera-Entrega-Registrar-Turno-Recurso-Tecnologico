@@ -1,7 +1,6 @@
 package Entidades;
 import Entidades.state.Disponible;
 import Entidades.state.Estado;
-import Entidades.state.Reservado;
 
 import java.time.*;
 import java.util.ArrayList;
@@ -101,12 +100,7 @@ public class Turno {
     }
     
     public void reservarTurno(LocalDateTime fechaHoraActual){
-//        for(CambioEstadoTurno cambio: cambiosDeEstadosTurno){
-//            if(cambio.esActual())
-//                cambio.setFechaHoraHasta(fechaHoraActual);
-//        }
-//        CambioEstadoTurno cet = new CambioEstadoTurno(estadoReservado,fechaHoraActual,null);
-//        cambiosDeEstadosTurno.add(cet);
+//        Delegacion al estado concreto:
         this.estadoActual.reservarTurno(this, cambiosDeEstadosTurno, fechaHoraActual);
     }
 
