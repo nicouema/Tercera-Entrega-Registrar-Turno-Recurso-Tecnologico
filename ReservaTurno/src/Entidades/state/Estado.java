@@ -49,21 +49,6 @@ public abstract class Estado {
         this.ambito = ambito;
     }
 
-//    public boolean isEsReservable() {
-//        return esReservable;
-//    }
-
-//    public void setEsReservable(boolean esReservable) {
-//        this.esReservable = esReservable;
-//    }
-
-//    public boolean isEsCancelable() {
-//        return esCancelable;
-//    }
-
-//    public void setEsCancelable(boolean esCancelable) {
-//        this.esCancelable = esCancelable;
-//    }
     
     //Empieza CU en Estado
     //Metodo 8
@@ -79,12 +64,12 @@ public abstract class Estado {
         return nombre;
     }
 
+
+    //registrarInicioUsoReserva()
     public void  reservarConConfirmacionPendiente(){
         throw new RuntimeException("Metodo no soportado");
     }
 
-    
-    //registrarInicioUsoReserva()
     public void iniciarUsoReserva(){
         throw new RuntimeException("Metodo no soportado");
     }
@@ -101,18 +86,7 @@ public abstract class Estado {
     {
         throw new RuntimeException("Metodo no soportado");
     }
-//
-//    public boolean esAmbitoTurno(){
-//        if(this.ambito.equals("Turno"))
-//            return true;
-//        return false;
-//    }
-//
-//    public boolean esReservado(){
-//        if(this.nombre.equals("Reservado"))
-//            return true;
-//        return false;
-//    }
+
 
 //    METODO POLIMORFICO
     public void reservarTurno(Turno turno, ArrayList<CambioEstadoTurno> cambios, LocalDateTime fechaHoraActual){
