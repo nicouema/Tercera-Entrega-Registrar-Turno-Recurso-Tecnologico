@@ -270,14 +270,7 @@ public class GestorReservaTurno{
         generarNotificaciones(checkMail,checkWsp, datosReserva);
         finCasoDeUso();
     }
-    
-//    public Estado obtenerReservado(){
-//        for(Estado estado: datos.estados()){
-//            if(estado.esAmbitoTurno() && estado.esReservado())
-//                return estado;
-//        }
-//        return null;
-//    }
+
 
     //TODO
     public void registrarReserva(){
