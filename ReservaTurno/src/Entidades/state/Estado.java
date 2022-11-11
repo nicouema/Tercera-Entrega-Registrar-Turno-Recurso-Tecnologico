@@ -79,7 +79,26 @@ public abstract class Estado {
         return nombre;
     }
 
-    public String cancelar(){
+    public void  reservarConConfirmacionPendiente(){
+        throw new RuntimeException("Metodo no soportado");
+    }
+
+    
+    //registrarInicioUsoReserva()
+    public void iniciarUsoReserva(){
+        throw new RuntimeException("Metodo no soportado");
+    }
+    public void finalizarUsoReserva(){
+        throw new RuntimeException("Metodo no soportado");
+    }
+    public void registrarReservaSinUso(){
+        throw new RuntimeException("Metodo no soportado");
+    }
+    public void cancelarTurnoPorMantenimientoRT(){
+        throw new RuntimeException("Metodo no soportado");
+    }
+    public void registrarTurnoSinUso()
+    {
         throw new RuntimeException("Metodo no soportado");
     }
 //
