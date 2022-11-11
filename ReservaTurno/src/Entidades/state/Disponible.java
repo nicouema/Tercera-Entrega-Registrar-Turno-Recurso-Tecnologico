@@ -22,7 +22,6 @@ public class Disponible extends Estado{
         for (CambioEstadoTurno cambio:cambios) if (cambio.esActual()) cambio.setFechaHoraHasta(fechaHoraActual);
 
         Estado estadoActual = crearEstado();
-//        TODO corregir en diagrame de secuencia parametros
         CambioEstadoTurno cambioActual = crearCambioEstadoTurno(estadoActual, fechaHoraActual);
         turno.agregarCambio(cambioActual);
         turno.setEstado(estadoActual);
@@ -34,7 +33,7 @@ public class Disponible extends Estado{
     }
 
     @Override
-    public CambioEstadoTurno crearCambioEstadoTurno(Estado estadoActual, LocalDateTime fechaHoraActual) {
-        return new CambioEstadoTurno(estadoActual, fechaHoraActual);
+    public CambioEstadoTurno crearCambioEstadoTurno(Estado estado, LocalDateTime fechaHoraDesde) {
+        return new CambioEstadoTurno(estado, fechaHoraDesde);
     }
 }

@@ -1,6 +1,5 @@
 package Controladores;
 
-import Entidades.state.Estado;
 import Interfaces.InterfazWhatsapp;
 import Interfaces.InterfazMail;
 import BaseDatos.Datos;
@@ -265,7 +264,6 @@ public class GestorReservaTurno{
         }
     }
 
-    // TODO
     public void tomarConfirmacionReserva(boolean checkMail, boolean checkWsp, String datosReserva){
 //        Estado estadoReservado = obtenerReservado();
         registrarReserva();
@@ -280,7 +278,8 @@ public class GestorReservaTurno{
 //        }
 //        return null;
 //    }
-    
+
+    //TODO
     public void registrarReserva(){
         LocalDateTime fechaHoraActual = obtenerFechaHoraActual();
         turnoSeleccionado.reservarTurno(fechaHoraActual);

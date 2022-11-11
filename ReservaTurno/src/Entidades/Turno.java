@@ -72,6 +72,7 @@ public class Turno {
     public ArrayList<String> obtenerDatosTurno(){
         ArrayList<String> b = new ArrayList<>();
         String estado = "";
+//        String estado = estadoActual.getNombre();
         for(CambioEstadoTurno cambio: cambiosDeEstadosTurno){
             if(cambio.esActual())
                 estado = cambio.obtenerEstado();
@@ -95,8 +96,8 @@ public class Turno {
             return true;
         return false;
     }
-    public void agregarCambio(CambioEstadoTurno cambioEstadoTurno){
-        cambiosDeEstadosTurno.add(cambioEstadoTurno);
+    public void agregarCambio(CambioEstadoTurno cambioActual){
+        cambiosDeEstadosTurno.add(cambioActual);
     }
     
     public void reservarTurno(LocalDateTime fechaHoraActual){
